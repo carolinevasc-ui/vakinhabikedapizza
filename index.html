@@ -1,27 +1,33 @@
-HTML
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike da Pizza - Apoie esta Ideia!</title>
+    <!-- Tailwind CSS para um design moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
 
+    <!-- HEADER / HERO SECTION -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fa-solid text-red-500 text-2xl">🍕</i>
-                <span class="font-bold text-xl tracking-tight text-gray-900">Bike da Pizza</span>
+            <!-- NOME "BIKE DA PIZZA" MAIOR E COM MAIS DESTAQUE -->
+            <div class="flex items-center space-x-3">
+                <span class="text-3xl animate-bounce">🍕</span>
+                <span class="font-black text-2xl md:text-3xl tracking-tight text-gray-950 uppercase font-mono">
+                    Bike <span class="text-red-600">da</span> Pizza
+                </span>
             </div>
-            <a href="https://www.vakinha.com.br/vaquinha/ajuda-para-comprar-materiais-para-vender-pizzas" target="_blank" class="bg-red-500 hover:bg-red-600 text-white font-semibold px-5 py-2 rounded-full text-sm transition shadow-md">
+            <a href="https://www.vakinha.com.br/vaquinha/ajuda-para-comprar-materiais-para-vender-pizzas" target="_blank" class="bg-red-500 hover:bg-red-600 text-white font-bold px-6 py-2.5 rounded-full text-sm transition shadow-md uppercase tracking-wider">
                 Contribuir Agora
             </a>
         </div>
     </header>
 
+    <!-- MAIN HERO -->
     <section class="max-w-6xl mx-auto px-4 py-8 md:py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
             <h1 class="text-4xl md:text-5xl font-extrabold text-gray-950 leading-tight mb-4">
@@ -35,13 +41,16 @@ HTML
             </a>
         </div>
         <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-200 aspect-[3/4] max-h-[500px] flex items-center justify-center">
+            <!-- SUA FOTO PRINCIPAL DA BIKE -->
             <img src="WhatsApp Image 2026-05-22 at 19.17.42.jpeg" alt="Bike da Pizza" class="w-full h-full object-cover">
         </div>
     </section>
 
+    <!-- METAS E ARRECADACÃO -->
     <section class="bg-white py-12 border-t border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             
+            <!-- Bloco de Texto Totalmente Clicável com Link da Vaquinha -->
             <a href="https://www.vakinha.com.br/vaquinha/ajuda-para-comprar-materiais-para-vender-pizzas" target="_blank" class="md:col-span-2 bg-gradient-to-br from-red-50 to-orange-50/50 p-6 md:p-8 rounded-2xl border border-red-100 shadow-sm flex flex-col justify-center hover:scale-[1.01] transition-transform block">
                 <div class="flex items-center space-x-3 mb-4">
                     <div class="text-red-500 text-3xl"><i class="fa-solid fa-pizza-slice"></i></div>
@@ -66,11 +75,13 @@ HTML
                 </div>
             </a>
 
+            <!-- Painel de Arrecadação -->
             <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-100 shadow-sm flex flex-col justify-between">
                 <div>
                     <span class="text-emerald-800 text-sm font-semibold uppercase tracking-wider block mb-1">Total Arrecadado</span>
                     <div class="text-3xl font-black text-emerald-950 mb-4">R$ 480 <span class="text-sm font-normal text-gray-500">de R$ 9.620</span></div>
                     
+                    <!-- Barra de Progresso -->
                     <div class="w-full bg-emerald-200 rounded-full h-3 mb-2 overflow-hidden">
                         <div class="bg-emerald-500 h-3 rounded-full transition-all duration-500" style="width: 4.99%"></div>
                     </div>
@@ -87,27 +98,32 @@ HTML
         </div>
     </section>
 
+    <!-- NOSSAS NECESSIDADES / PRODUTOS -->
     <section class="max-w-6xl mx-auto px-4 py-12">
         <h2 class="text-2xl md:text-3xl font-black text-gray-950 text-center mb-2">O Que Vamos Comprar?</h2>
         <p class="text-gray-600 text-center mb-8 max-w-xl mx-auto">Transparência total. Veja os equipamentos industriais indispensáveis que a sua doação ajudará a adquirir:</p>
         
+        <!-- FOTO DOS ITENS -->
         <div class="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white p-2">
             <img src="Captura de tela 2026-06-26 155207.png" alt="Resumo das Máquinas e Custos necessários" class="w-full h-auto rounded-xl">
         </div>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Detalhe 1 -->
             <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
                 <div class="text-red-500 text-2xl mb-2"><i class="fa-solid fa-fire-burner"></i></div>
                 <h3 class="font-bold text-lg text-gray-950 mb-1">Estrutura de Produção</h3>
                 <p class="text-sm text-gray-600">O forno de pizza portátil e a amassadeira rápida de 5kg vão permitir bater e assar massas artesanais com padrão profissional e agilidade.</p>
             </div>
 
+            <!-- Detalhe 2 -->
             <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
                 <div class="text-red-500 text-2xl mb-2"><i class="fa-solid fa-scroll"></i></div>
                 <h3 class="font-bold text-lg text-gray-950 mb-1">Padronização da Massa</h3>
                 <p class="text-sm text-gray-600">Com o cilindro laminador, garantimos a espessura perfeita e uniforme para que cada pizza saia fina, leve e crocante.</p>
             </div>
 
+            <!-- Detalhe 3 -->
             <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
                 <div class="text-red-500 text-2xl mb-2"><i class="fa-solid fa-snowflake"></i></div>
                 <h3 class="font-bold text-lg text-gray-950 mb-1">Armazenamento Seguro</h3>
@@ -116,11 +132,13 @@ HTML
         </div>
     </section>
 
+    <!-- DEPOIMENTOS DE APOIADORES -->
     <section class="bg-gray-100 py-12">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-2xl md:text-3xl font-black text-gray-950 text-center mb-10">Quem já apoia a nossa jornada</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Depoimento 1 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-4">
                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Apoiador Carla M." class="w-12 h-12 rounded-full object-cover flex-shrink-0">
                     <div>
@@ -130,6 +148,7 @@ HTML
                     </div>
                 </div>
 
+                <!-- Depoimento 2 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-4">
                     <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="Apoiador Lucas S." class="w-12 h-12 rounded-full object-cover flex-shrink-0">
                     <div>
@@ -142,6 +161,7 @@ HTML
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="bg-white py-8 border-t border-gray-100 text-center text-sm text-gray-500">
         <p>© 2026 Bike da Pizza. Feito com determinação e foco no futuro.</p>
     </footer>
