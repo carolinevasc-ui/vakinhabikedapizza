@@ -11,10 +11,16 @@
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
 
+    <!-- CONFIGURAÇÃO AUTOMÁTICA DE VALORES -->
+    <script>
+        // MUDANDO APENAS ESSE NÚMERO ABAIXO, TODO O SITE SE RECALCULA SOZINHO:
+        const VALOR_ARRECADADO = 480;  // Altere aqui quando receber novas doações (coloque apenas números)
+        const VALOR_META = 9620;       // Sua meta total estipulada
+    </script>
+
     <!-- HEADER / HERO SECTION -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <!-- NOME "BIKE DA PIZZA" MAIOR E COM MAIS DESTAQUE -->
             <div class="flex items-center space-x-3">
                 <span class="text-3xl animate-bounce">🍕</span>
                 <span class="font-black text-2xl md:text-3xl tracking-tight text-gray-950 uppercase font-mono">
@@ -41,7 +47,6 @@
             </a>
         </div>
         <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-200 aspect-[3/4] max-h-[500px] flex items-center justify-center">
-            <!-- SUA FOTO PRINCIPAL DA BIKE -->
             <img src="WhatsApp Image 2026-05-22 at 19.17.42.jpeg" alt="Bike da Pizza" class="w-full h-full object-cover">
         </div>
     </section>
@@ -57,40 +62,34 @@
                     <h2 class="text-xl font-bold text-gray-950 tracking-tight">Nossa História e Propósito</h2>
                 </div>
                 <div class="text-gray-700 text-sm md:text-base space-y-4 leading-relaxed">
-                    <p>
-                        Olá, amigos, familiares e apoiadores do empreendedorismo real!
-                    </p>
-                    <p>
-                        Quem me conhece sabe o quanto eu sou movida por desafios, trabalho duro e, acima de tudo, pela paixão em atender bem e levar alegria para as pessoas. Depois de passar por grandes desafios no mercado de trabalho e entender que o meu caminho é a autonomia, decidi focar toda a minha energia em um sonho antigo e delicioso: empreender na área da alimentação.
-                    </p>
-                    <p class="font-semibold text-red-600 flex items-center gap-1">
-                        Assim nasceu o projeto da "Bike da Pizza"! 🍕🚲
-                    </p>
-                    <p>
-                        A ideia é simples, mas cheia de sabor e inovação: transformar um triciclo adaptado em uma pizzaria móvel completa, equipada com um forno especializado para assar pizzas artesanais, quentinhas e crocantes, direto nas ruas e eventos da Região Metropolitana de Recife.
-                    </p>
-                    <p>
-                        É um negócio dinâmico, que vai me permitir levar um produto de qualidade direto até o cliente, de forma honesta, batalhadora e com aquele atendimento humanizado que eu faço questão de entregar em tudo o que faço.
-                    </p>
+                    <p>Olá, amigos, familiares e apoiadores do empreendedorismo real!</p>
+                    <p>Quem me conhece sabe o quanto eu sou movida por desafios, trabalho duro e, acima de tudo, pela paixão em atender bem e levar alegria para as pessoas. Depois de passar por grandes desafios no mercado de trabalho e entender que o meu caminho é a autonomia, decidi focar toda a minha energia em um sonho antigo e delicioso: empreender na área da alimentação.</p>
+                    <p class="font-semibold text-red-600 flex items-center gap-1">Assim nasceu o projeto da "Bike da Pizza"! 🍕🚲</p>
+                    <p>A ideia é simples, mas cheia de sabor e inovação: transformar um triciclo adaptado em uma pizzaria móvel completa, equipada com um forno especializado para assar pizzas artesanais, quentinhas e crocantes, direto nas ruas e eventos da Região Metropolitana de Recife.</p>
+                    <p>É um negócio dinâmico, que vai me permitir levar um produto de qualidade direto até o cliente, de forma honesta, batalhadora e com aquele atendimento humanizado que eu faço questão de entregar em tudo o que faço.</p>
                 </div>
             </a>
 
-            <!-- Painel de Arrecadação -->
+            <!-- Painel de Arrecadação Inteligente e Automatizado -->
             <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-100 shadow-sm flex flex-col justify-between">
                 <div>
                     <span class="text-emerald-800 text-sm font-semibold uppercase tracking-wider block mb-1">Total Arrecadado</span>
-                    <div class="text-3xl font-black text-emerald-950 mb-4">R$ 760 <span class="text-sm font-normal text-gray-500">de R$ 9.620</span></div>
+                    <!-- IDs usados pelo robô JavaScript para preencher os valores automaticamente -->
+                    <div class="text-3xl font-black text-emerald-950 mb-4">
+                        <span id="valor-arrecadado-txt">R$ 0</span> 
+                        <span class="text-sm font-normal text-gray-500">de <span id="valor-meta-txt">R$ 0</span></span>
+                    </div>
                     
-                    <!-- Barra de Progresso -->
+                    <!-- Barra de Progresso Dinâmica -->
                     <div class="w-full bg-emerald-200 rounded-full h-3 mb-2 overflow-hidden">
-                        <div class="bg-emerald-500 h-3 rounded-full transition-all duration-500" style="width: 7.90%"></div>
+                        <div id="barra-progresso" class="bg-emerald-500 h-3 rounded-full transition-all duration-1000" style="width: 0%"></div>
                     </div>
                     <div class="flex justify-between text-xs font-medium text-emerald-700">
-                        <span>7,9% alcançado</span>
-                        <span>R$ 8.860 restante</span>
+                        <span id="porcentagem-txt">0% alcançado</span>
+                        <span id="valor-restante-txt">R$ 0 restante</span>
                     </div>
                 </div>
-                <a href="https://www.vakinha.com.br/vaquinha/ajuda-para-comprar-materiais-para-vender-pizzas" target="_blank" class="mt-6 w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center font-bold py-3 rounded-xl block transition">
+                <a href="https://www.vakinha.com.br/vaquinha/ajuda-para-comprar-materiais-para-vender-pizzas" target="_blank" class="mt-6 w-full bg-emerald-600 hover:bg-emerald-700 text-white text-center font-bold py-3 rounded-xl block transition uppercase tracking-wider text-sm">
                     Rumo à nossa meta!
                 </a>
             </div>
@@ -103,27 +102,21 @@
         <h2 class="text-2xl md:text-3xl font-black text-gray-950 text-center mb-2">O Que Vamos Comprar?</h2>
         <p class="text-gray-600 text-center mb-8 max-w-xl mx-auto">Transparência total. Veja os equipamentos industriais indispensáveis que a sua doação ajudará a adquirir:</p>
         
-        <!-- FOTO DOS ITENS -->
         <div class="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white p-2">
             <img src="Captura de tela 2026-06-26 155207.png" alt="Resumo das Máquinas e Custos necessários" class="w-full h-auto rounded-xl">
         </div>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <!-- Detalhe 1 -->
             <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
                 <div class="text-red-500 text-2xl mb-2"><i class="fa-solid fa-fire-burner"></i></div>
                 <h3 class="font-bold text-lg text-gray-950 mb-1">Estrutura de Produção</h3>
                 <p class="text-sm text-gray-600">O forno de pizza portátil e a amassadeira rápida de 5kg vão permitir bater e assar massas artesanais com padrão profissional e agilidade.</p>
             </div>
-
-            <!-- Detalhe 2 -->
             <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
                 <div class="text-red-500 text-2xl mb-2"><i class="fa-solid fa-scroll"></i></div>
                 <h3 class="font-bold text-lg text-gray-950 mb-1">Padronização da Massa</h3>
                 <p class="text-sm text-gray-600">Com o cilindro laminador, garantimos a espessura perfeita e uniforme para que cada pizza saia fina, leve e crocante.</p>
             </div>
-
-            <!-- Detalhe 3 -->
             <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
                 <div class="text-red-500 text-2xl mb-2"><i class="fa-solid fa-snowflake"></i></div>
                 <h3 class="font-bold text-lg text-gray-950 mb-1">Armazenamento Seguro</h3>
@@ -136,9 +129,7 @@
     <section class="bg-gray-100 py-12">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-2xl md:text-3xl font-black text-gray-950 text-center mb-10">Quem já apoia a nossa jornada</h2>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Depoimento 1 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-4">
                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150" alt="Apoiador Carla M." class="w-12 h-12 rounded-full object-cover flex-shrink-0">
                     <div>
@@ -147,8 +138,6 @@
                         <p class="text-sm text-gray-600">"A ideia é incrível e a empreendedora é batalhadora demais! Mal posso esperar para comer essa pizza saindo quentinha da bike."</p>
                     </div>
                 </div>
-
-                <!-- Depoimento 2 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-start space-x-4">
                     <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="Apoiador Lucas S." class="w-12 h-12 rounded-full object-cover flex-shrink-0">
                     <div>
@@ -165,6 +154,30 @@
     <footer class="bg-white py-8 border-t border-gray-100 text-center text-sm text-gray-500">
         <p>© 2026 Bike da Pizza. Feito com determinação e foco no futuro.</p>
     </footer>
+
+    <!-- SCRIPT DE CÁLCULO MATEMÁTICO AUTOMÁTICO -->
+    <script>
+        // Função para formatar os números como R$ 1.000,00
+        const formatarReal = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        // Realiza as operações matemáticas básicas
+        const valorRestante = VALOR_META - VALOR_ARRECADADO;
+        let porcentagem = (VALOR_ARRECADADO / VALOR_META) * 100;
+        
+        // Evita que a barra passe de 100% ou que exiba quebras visuais feias se estiver muito no início
+        if (porcentagem > 100) porcentagem = 100;
+        
+        // Insere os valores calculados automaticamente nos textos da tela
+        document.getElementById('valor-arrecadado-txt').innerText = formatarReal(VALOR_ARRECADADO);
+        document.getElementById('valor-meta-txt').innerText = formatarReal(VALOR_META);
+        document.getElementById('valor-restante-txt').innerText = formatarReal(valorRestante) + " restante";
+        document.getElementById('porcentagem-txt').innerText = porcentagem.toFixed(2) + "% alcançado";
+        
+        // Faz a animação da barra de progresso crescer dinamicamente na tela
+        setTimeout(() => {
+            document.getElementById('barra-progresso').style.width = porcentagem + "%";
+        }, 200);
+    </script>
 
 </body>
 </html>
